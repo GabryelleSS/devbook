@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	StringConnectionBD = ""
+	DBConnectionURL = ""
 	Port = 0
 )
 
@@ -26,7 +26,7 @@ func ConfigEnvironmentVariables() {
 		Port = 9000
 	}
 
-	StringConnectionBD = fmt.Sprintf("%s:%s@/%s?charset=utf8&parseTime=True&loc=Local",
+	DBConnectionURL = fmt.Sprintf("%s:%s@/%s?charset=utf8&parseTime=True&loc=Local",
 		os.Getenv("DB_USER"),
 		os.Getenv("DB_PASSWORD"),
 		os.Getenv("DB_NAME"),
